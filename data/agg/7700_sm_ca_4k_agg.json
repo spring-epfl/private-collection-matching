@@ -1,0 +1,530 @@
+[
+
+[
+ {
+  "SetNum": 1024,
+  "RespSize": 384,
+  "PreProcess": 0.1615581,
+  "Query": 0.0034831,
+  "Response": 36.0542531,
+  "Evaluation": 0.001819,
+  "Marshal": 0.0329
+ },
+ {
+  "SetNum": 1024,
+  "RespSize": 384,
+  "PreProcess": 0.1613067,
+  "Query": 0.0031806,
+  "Response": 36.3654496,
+  "Evaluation": 0.0018396,
+  "Marshal": 0.0219975
+ },
+ {
+  "SetNum": 1024,
+  "RespSize": 384,
+  "PreProcess": 0.1638475,
+  "Query": 0.0033986,
+  "Response": 36.2067293,
+  "Evaluation": 0.0018107,
+  "Marshal": 0.032164
+ },
+ {
+  "SetNum": 1024,
+  "RespSize": 384,
+  "PreProcess": 0.161435,
+  "Query": 0.0031964,
+  "Response": 36.1421079,
+  "Evaluation": 0.0018223,
+  "Marshal": 0.0327196
+ },
+ {
+  "SetNum": 1024,
+  "RespSize": 384,
+  "PreProcess": 0.1679007,
+  "Query": 0.0032634,
+  "Response": 36.2951834,
+  "Evaluation": 0.0020386,
+  "Marshal": 0.0340253
+ }
+],
+
+[
+ {
+  "SetNum": 128,
+  "RespSize": 384,
+  "PreProcess": 0.160789,
+  "Query": 0.0030826,
+  "Response": 4.2176193,
+  "Evaluation": 0.001847,
+  "Marshal": 0.0196187
+ },
+ {
+  "SetNum": 128,
+  "RespSize": 384,
+  "PreProcess": 0.1634943,
+  "Query": 0.0032785,
+  "Response": 4.2511452,
+  "Evaluation": 0.0021253,
+  "Marshal": 0.0215183
+ },
+ {
+  "SetNum": 128,
+  "RespSize": 384,
+  "PreProcess": 0.1638697,
+  "Query": 0.0031307,
+  "Response": 4.2062931,
+  "Evaluation": 0.0018528,
+  "Marshal": 0.0330033
+ },
+ {
+  "SetNum": 128,
+  "RespSize": 384,
+  "PreProcess": 0.1633882,
+  "Query": 0.0031209,
+  "Response": 4.2346131,
+  "Evaluation": 0.0018898,
+  "Marshal": 0.0357052
+ },
+ {
+  "SetNum": 128,
+  "RespSize": 384,
+  "PreProcess": 0.1627223,
+  "Query": 0.0032011,
+  "Response": 4.2434999,
+  "Evaluation": 0.0018564,
+  "Marshal": 0.0373864
+ }
+],
+
+[
+ {
+  "SetNum": 16,
+  "RespSize": 384,
+  "PreProcess": 0.1667497,
+  "Query": 0.0033017,
+  "Response": 0.5664013,
+  "Evaluation": 0.0020493,
+  "Marshal": 0.0332265
+ },
+ {
+  "SetNum": 16,
+  "RespSize": 384,
+  "PreProcess": 0.1621173,
+  "Query": 0.0031101,
+  "Response": 0.5567041,
+  "Evaluation": 0.0018526,
+  "Marshal": 0.0246116
+ },
+ {
+  "SetNum": 16,
+  "RespSize": 384,
+  "PreProcess": 0.1635467,
+  "Query": 0.0031517,
+  "Response": 0.5618362,
+  "Evaluation": 0.0018441,
+  "Marshal": 0.0333456
+ },
+ {
+  "SetNum": 16,
+  "RespSize": 384,
+  "PreProcess": 0.1617906,
+  "Query": 0.0030991,
+  "Response": 0.5585801,
+  "Evaluation": 0.0019338,
+  "Marshal": 0.0207465
+ },
+ {
+  "SetNum": 16,
+  "RespSize": 384,
+  "PreProcess": 0.1623747,
+  "Query": 0.0033943,
+  "Response": 0.5616765,
+  "Evaluation": 0.0018016,
+  "Marshal": 0.0256422
+ }
+],
+
+[
+ {
+  "SetNum": 1,
+  "RespSize": 384,
+  "PreProcess": 0.1671674,
+  "Query": 0.0032678,
+  "Response": 0.1404906,
+  "Evaluation": 0.0018172,
+  "Marshal": 0.0328334
+ },
+ {
+  "SetNum": 1,
+  "RespSize": 384,
+  "PreProcess": 0.1605805,
+  "Query": 0.0031957,
+  "Response": 0.1399182,
+  "Evaluation": 0.0019586,
+  "Marshal": 0.023339
+ },
+ {
+  "SetNum": 1,
+  "RespSize": 384,
+  "PreProcess": 0.1649734,
+  "Query": 0.0032647,
+  "Response": 0.139605,
+  "Evaluation": 0.0018478,
+  "Marshal": 0.0238654
+ },
+ {
+  "SetNum": 1,
+  "RespSize": 384,
+  "PreProcess": 0.1632115,
+  "Query": 0.0030891,
+  "Response": 0.1452189,
+  "Evaluation": 0.002025,
+  "Marshal": 0.0229914
+ },
+ {
+  "SetNum": 1,
+  "RespSize": 384,
+  "PreProcess": 0.1629864,
+  "Query": 0.0032213,
+  "Response": 0.1394248,
+  "Evaluation": 0.0018512,
+  "Marshal": 0.0246095
+ }
+],
+
+[
+ {
+  "SetNum": 256,
+  "RespSize": 384,
+  "PreProcess": 0.1614601,
+  "Query": 0.0030925,
+  "Response": 8.6318902,
+  "Evaluation": 0.0020485,
+  "Marshal": 0.0331238
+ },
+ {
+  "SetNum": 256,
+  "RespSize": 384,
+  "PreProcess": 0.1603132,
+  "Query": 0.0032012,
+  "Response": 8.6029243,
+  "Evaluation": 0.0018199,
+  "Marshal": 0.0344285
+ },
+ {
+  "SetNum": 256,
+  "RespSize": 384,
+  "PreProcess": 0.1654205,
+  "Query": 0.0032617,
+  "Response": 8.5712949,
+  "Evaluation": 0.0018368,
+  "Marshal": 0.0231531
+ },
+ {
+  "SetNum": 256,
+  "RespSize": 384,
+  "PreProcess": 0.163613,
+  "Query": 0.0031133,
+  "Response": 8.5631465,
+  "Evaluation": 0.0018438,
+  "Marshal": 0.0316065
+ },
+ {
+  "SetNum": 256,
+  "RespSize": 384,
+  "PreProcess": 0.1655523,
+  "Query": 0.0032794,
+  "Response": 8.5865888,
+  "Evaluation": 0.001822,
+  "Marshal": 0.0229673
+ }
+],
+
+[
+ {
+  "SetNum": 2,
+  "RespSize": 384,
+  "PreProcess": 0.1664583,
+  "Query": 0.0031035,
+  "Response": 0.1402284,
+  "Evaluation": 0.0018125,
+  "Marshal": 0.033661
+ },
+ {
+  "SetNum": 2,
+  "RespSize": 384,
+  "PreProcess": 0.1595848,
+  "Query": 0.0031952,
+  "Response": 0.1381667,
+  "Evaluation": 0.0019939,
+  "Marshal": 0.0231966
+ },
+ {
+  "SetNum": 2,
+  "RespSize": 384,
+  "PreProcess": 0.1627232,
+  "Query": 0.00311,
+  "Response": 0.1396344,
+  "Evaluation": 0.0020251,
+  "Marshal": 0.0228317
+ },
+ {
+  "SetNum": 2,
+  "RespSize": 384,
+  "PreProcess": 0.1626494,
+  "Query": 0.0032715,
+  "Response": 0.1410092,
+  "Evaluation": 0.0019414,
+  "Marshal": 0.0246552
+ },
+ {
+  "SetNum": 2,
+  "RespSize": 384,
+  "PreProcess": 0.1633604,
+  "Query": 0.0033657,
+  "Response": 0.139669,
+  "Evaluation": 0.0019946,
+  "Marshal": 0.0257208
+ }
+],
+
+[
+ {
+  "SetNum": 32,
+  "RespSize": 384,
+  "PreProcess": 0.1680401,
+  "Query": 0.0032761,
+  "Response": 1.0539067,
+  "Evaluation": 0.0019034,
+  "Marshal": 0.0272165
+ },
+ {
+  "SetNum": 32,
+  "RespSize": 384,
+  "PreProcess": 0.1669428,
+  "Query": 0.003433,
+  "Response": 1.068462,
+  "Evaluation": 0.0018292,
+  "Marshal": 0.0309824
+ },
+ {
+  "SetNum": 32,
+  "RespSize": 384,
+  "PreProcess": 0.1645144,
+  "Query": 0.0033602,
+  "Response": 1.0624902,
+  "Evaluation": 0.0018399,
+  "Marshal": 0.0251352
+ },
+ {
+  "SetNum": 32,
+  "RespSize": 384,
+  "PreProcess": 0.1650747,
+  "Query": 0.0033504,
+  "Response": 1.0823166,
+  "Evaluation": 0.0021097,
+  "Marshal": 0.0363738
+ },
+ {
+  "SetNum": 32,
+  "RespSize": 384,
+  "PreProcess": 0.166229,
+  "Query": 0.0033485,
+  "Response": 1.0629257,
+  "Evaluation": 0.0018313,
+  "Marshal": 0.0270063
+ }
+],
+
+[
+ {
+  "SetNum": 4,
+  "RespSize": 384,
+  "PreProcess": 0.166579,
+  "Query": 0.0030777,
+  "Response": 0.199926,
+  "Evaluation": 0.0020196,
+  "Marshal": 0.0332824
+ },
+ {
+  "SetNum": 4,
+  "RespSize": 384,
+  "PreProcess": 0.1608753,
+  "Query": 0.0031307,
+  "Response": 0.1961789,
+  "Evaluation": 0.0019615,
+  "Marshal": 0.0241524
+ },
+ {
+  "SetNum": 4,
+  "RespSize": 384,
+  "PreProcess": 0.1616804,
+  "Query": 0.0031002,
+  "Response": 0.1946033,
+  "Evaluation": 0.0018119,
+  "Marshal": 0.0239519
+ },
+ {
+  "SetNum": 4,
+  "RespSize": 384,
+  "PreProcess": 0.1635021,
+  "Query": 0.003257,
+  "Response": 0.1951503,
+  "Evaluation": 0.0018341,
+  "Marshal": 0.0251805
+ },
+ {
+  "SetNum": 4,
+  "RespSize": 384,
+  "PreProcess": 0.163322,
+  "Query": 0.0032705,
+  "Response": 0.214176,
+  "Evaluation": 0.0021354,
+  "Marshal": 0.036406
+ }
+],
+
+[
+ {
+  "SetNum": 512,
+  "RespSize": 384,
+  "PreProcess": 0.1675631,
+  "Query": 0.0033186,
+  "Response": 17.5869062,
+  "Evaluation": 0.0018428,
+  "Marshal": 0.0335409
+ },
+ {
+  "SetNum": 512,
+  "RespSize": 384,
+  "PreProcess": 0.1611899,
+  "Query": 0.0031538,
+  "Response": 17.5679951,
+  "Evaluation": 0.001837,
+  "Marshal": 0.0312445
+ },
+ {
+  "SetNum": 512,
+  "RespSize": 384,
+  "PreProcess": 0.1634377,
+  "Query": 0.0031533,
+  "Response": 17.58697,
+  "Evaluation": 0.0018256,
+  "Marshal": 0.0352914
+ },
+ {
+  "SetNum": 512,
+  "RespSize": 384,
+  "PreProcess": 0.1627376,
+  "Query": 0.0031366,
+  "Response": 17.5967796,
+  "Evaluation": 0.0018351,
+  "Marshal": 0.0348334
+ },
+ {
+  "SetNum": 512,
+  "RespSize": 384,
+  "PreProcess": 0.1634859,
+  "Query": 0.00316,
+  "Response": 17.5241155,
+  "Evaluation": 0.0018253,
+  "Marshal": 0.0355092
+ }
+],
+
+[
+ {
+  "SetNum": 64,
+  "RespSize": 384,
+  "PreProcess": 0.1634936,
+  "Query": 0.004372,
+  "Response": 2.1153701,
+  "Evaluation": 0.0020658,
+  "Marshal": 0.0264166
+ },
+ {
+  "SetNum": 64,
+  "RespSize": 384,
+  "PreProcess": 0.164191,
+  "Query": 0.0032709,
+  "Response": 2.097433,
+  "Evaluation": 0.0019842,
+  "Marshal": 0.0340185
+ },
+ {
+  "SetNum": 64,
+  "RespSize": 384,
+  "PreProcess": 0.1638032,
+  "Query": 0.0033097,
+  "Response": 2.0958298,
+  "Evaluation": 0.0018377,
+  "Marshal": 0.0384007
+ },
+ {
+  "SetNum": 64,
+  "RespSize": 384,
+  "PreProcess": 0.1637624,
+  "Query": 0.0034033,
+  "Response": 2.1143618,
+  "Evaluation": 0.0018249,
+  "Marshal": 0.0270418
+ },
+ {
+  "SetNum": 64,
+  "RespSize": 384,
+  "PreProcess": 0.1637332,
+  "Query": 0.0033469,
+  "Response": 2.0940254,
+  "Evaluation": 0.0019775,
+  "Marshal": 0.0341215
+ }
+],
+
+[
+ {
+  "SetNum": 8,
+  "RespSize": 384,
+  "PreProcess": 0.1612658,
+  "Query": 0.0031391,
+  "Response": 0.3138892,
+  "Evaluation": 0.0018326,
+  "Marshal": 0.0240818
+ },
+ {
+  "SetNum": 8,
+  "RespSize": 384,
+  "PreProcess": 0.1626329,
+  "Query": 0.0031216,
+  "Response": 0.3194945,
+  "Evaluation": 0.0018337,
+  "Marshal": 0.0343365
+ },
+ {
+  "SetNum": 8,
+  "RespSize": 384,
+  "PreProcess": 0.1622661,
+  "Query": 0.0033456,
+  "Response": 0.3190769,
+  "Evaluation": 0.0018392,
+  "Marshal": 0.0244985
+ },
+ {
+  "SetNum": 8,
+  "RespSize": 384,
+  "PreProcess": 0.1629101,
+  "Query": 0.0033311,
+  "Response": 0.3142484,
+  "Evaluation": 0.0018412,
+  "Marshal": 0.0243543
+ },
+ {
+  "SetNum": 8,
+  "RespSize": 384,
+  "PreProcess": 0.1635171,
+  "Query": 0.0034776,
+  "Response": 0.3129809,
+  "Evaluation": 0.0018028,
+  "Marshal": 0.0244841
+ }
+]
+]

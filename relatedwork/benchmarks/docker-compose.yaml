@@ -1,0 +1,29 @@
+version: '3'
+services:
+  client:
+    container_name: client
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    tty: true
+    volumes:
+    - ../:/psi
+    networks:
+    - psi-is-great
+    cap_add:
+    - NET_ADMIN
+  server:
+    container_name: server
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    tty: true
+    volumes:
+    - ../:/psi
+    networks:
+    - psi-is-great
+    cap_add:
+    - NET_ADMIN
+networks:
+  psi-is-great:
+    driver: bridge
