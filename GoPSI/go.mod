@@ -1,4 +1,4 @@
-module github.com/spring-epfl/GoPSI
+module github.com/spring-epfl/private-collection-matching
 
 go 1.15
 

@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/rs/zerolog"
-	. "github.com/spring-epfl/GoPSI/pkg/psm"
+	. "github.com/spring-epfl/private-collection-matching/pkg/psm"
 )
 
 func RunCLIBench(cli_type string) {

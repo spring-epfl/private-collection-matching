@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/spring-epfl/GoPSI/cmd"
+	"github.com/spring-epfl/private-collection-matching/cmd"
 )
 
 func main() {
