@@ -37,13 +37,13 @@ var matchingTypeMap = map[string]MatchingType{
 type AggregationType int
 
 const (
-	AGGREGATION_NONE AggregationType = iota
+	AGGREGATION_NAIVE AggregationType = iota
 	AGGREGATION_X_MS
 	AGGREGATION_CA_MS
 )
 
 var aggregationTypeMap = map[string]AggregationType{
-	"":      AGGREGATION_NONE,
+	"":      AGGREGATION_NAIVE,
 	"x-ms":  AGGREGATION_X_MS,
 	"ca-ms": AGGREGATION_CA_MS,
 }

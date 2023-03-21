@@ -167,7 +167,7 @@ func (cl *client) EvalResponse(clientSet []uint64, query *psiQuery, resp *psiRes
 		ans = isUintZero(ans)
 	}
 
-	if qt.Aggregation == AGGREGATION_NONE {
+	if qt.Aggregation == AGGREGATION_NAIVE {
 		Logger.Info().Msgf("client: response without aggregation.")
 		return ans
 	} else {

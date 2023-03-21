@@ -249,9 +249,9 @@ func Example() {
     // 1st positional parameters (small domain): false (use small input), true (use small domain)
     // psi layer: PSI_PS, PSI_CA
     // Matching layer: MATCHING_NONE, MATCHING_TVERSKY, MATCHING_TVERSKY_PLAIN, MATCHING_FPSM
-    // Aggregation layer: AGGREGATION_NONE, AGGREGATION_X_MS, AGGREGATION_CA_MS
+    // Aggregation layer: AGGREGATION_NAIVE, AGGREGATION_X_MS, AGGREGATION_CA_MS
     // Check 'types.go' for more information.
-    queryType, err := NewQueryType(true, PSI_CA, MATCHING_TVERSKY, AGGREGATION_NONE)
+    queryType, err := NewQueryType(true, PSI_CA, MATCHING_TVERSKY, AGGREGATION_NAIVE)
     if err != nil {
         panic(err)
     }

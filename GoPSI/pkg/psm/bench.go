@@ -111,7 +111,7 @@ func APISample() {
 	bfvParams := GetBFVParam(15)       // BFV params with N=2^15
 	pp := NewPSIParams(bfvParams, 128) // A framework params with 128 bit se
 
-	queryType, err := NewQueryType(true, PSI_CA, MATCHING_TVERSKY, AGGREGATION_NONE)
+	queryType, err := NewQueryType(true, PSI_CA, MATCHING_TVERSKY, AGGREGATION_NAIVE)
 	if err != nil {
 		panic(err)
 	}

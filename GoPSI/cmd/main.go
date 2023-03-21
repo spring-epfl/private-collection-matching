@@ -92,7 +92,7 @@ func RunCLIBench(cli_type string) {
 	} else if cli_type == "document" {
 		qt, err = NewQueryType(false, PSI_PSI, MATCHING_FPSM, aggregation)
 	} else if cli_type == "sd-comparison" {
-		qt, err = NewQueryType(true, PSI_CA, MATCHING_NONE, AGGREGATION_NONE)
+		qt, err = NewQueryType(true, PSI_CA, MATCHING_NONE, AGGREGATION_NAIVE)
 	}
 
 	if err != nil {

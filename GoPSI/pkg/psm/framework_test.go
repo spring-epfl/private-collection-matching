@@ -38,7 +38,7 @@ func runHomoPsi(paramSize int, clientSet []uint64, serverSets [][]uint64, qt Que
 func checkPlainTversky(paramSize int, clientSet []uint64, serverSets [][]uint64) bool {
 	Logger.Debug().Msgf("running check plain tversky")
 
-	qt, err := NewQueryType(true, PSI_CA, MATCHING_TVERSKY_PLAIN, AGGREGATION_NONE)
+	qt, err := NewQueryType(true, PSI_CA, MATCHING_TVERSKY_PLAIN, AGGREGATION_NAIVE)
 	if err != nil {
 		panic(err)
 	}
@@ -67,7 +67,7 @@ func checkPlainTversky(paramSize int, clientSet []uint64, serverSets [][]uint64)
 func checkTversky(paramSize int, clientSet []uint64, serverSets [][]uint64) bool {
 	Logger.Debug().Msgf("running check psm tversky")
 
-	qt, err := NewQueryType(true, PSI_CA, MATCHING_TVERSKY, AGGREGATION_NONE)
+	qt, err := NewQueryType(true, PSI_CA, MATCHING_TVERSKY, AGGREGATION_NAIVE)
 	if err != nil {
 		panic(err)
 	}
@@ -131,7 +131,7 @@ func TestTverskySmall(t *testing.T) {
 		{10, 20, 30, 40, 50, 60},
 	}
 
-	qt, err := NewQueryType(true, PSI_CA, MATCHING_TVERSKY_PLAIN, AGGREGATION_NONE)
+	qt, err := NewQueryType(true, PSI_CA, MATCHING_TVERSKY_PLAIN, AGGREGATION_NAIVE)
 	if err != nil {
 		panic(err)
 	}
@@ -245,7 +245,7 @@ func TestFPSMRandom(t *testing.T) {
 
 	clientSet, serverSets := sets[0][:3], sets[:]
 
-	qt, err := NewQueryType(false, PSI_PSI, MATCHING_FPSM, AGGREGATION_NONE)
+	qt, err := NewQueryType(false, PSI_PSI, MATCHING_FPSM, AGGREGATION_NAIVE)
 	if err != nil {
 		panic(err)
 	}
@@ -267,7 +267,7 @@ func TestFPSMRandomLong(t *testing.T) {
 	serverSets[4500] = append(clientSet, 1, 8, 33, 66, 52)
 	serverSets[8500] = append(clientSet, 42, 23, 55, 1)
 
-	qt, err := NewQueryType(false, PSI_PSI, MATCHING_FPSM, AGGREGATION_NONE)
+	qt, err := NewQueryType(false, PSI_PSI, MATCHING_FPSM, AGGREGATION_NAIVE)
 	if err != nil {
 		panic(err)
 	}
