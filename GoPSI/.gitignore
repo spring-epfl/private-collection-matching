@@ -1,0 +1,4 @@
+cmd/doc_search/doc_search
+cmd/chem_search/chem_search
+cmd/small_domain_bench/small_domain_bench
+cmd/*/bench.json
