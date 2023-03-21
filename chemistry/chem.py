@@ -26,7 +26,7 @@ def extract_data_from_db(db_path: Path, query: str) -> List[str]:
 
 
 def read_smiles_from_db(db_path: Path) -> List[str]:
-    smiles = extract_data_from_db("select CANONICAL_SMILES from compound_structures;")
+    smiles = extract_data_from_db(db_path, "select CANONICAL_SMILES from compound_structures;")
     with open('smiles.json', 'w') as fd:
         json.dump(smiles, fd)
     return smiles
