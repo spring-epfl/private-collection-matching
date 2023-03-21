@@ -60,13 +60,13 @@ Running all tests takes 5-10 minutes.
 As long as you call `go test` directly from the `psm` directory this will work directly (either from the docker container or locally). Otherwise, please update the `const FPS_MINI_PATH` path variable in `config.go` to point to the absolute path to of the `data/raw_chem/fps-mini.txt` file.
 
 
-## Benchmarking scripts
+## Benchmarking programs
 
-We implemented three benchmarking scripts to evaluate the framework in different configurations:  `cmd/chem_search/chem_search`, `cmd/doc_search/doc_search`, and `cmd/small_domain_bench/small_domain_bench`. Passing in the `-h` flag prints the help message.
+We implemented three benchmarking programs to evaluate the framework in different configurations:  `cmd/chem_search/chem_search`, `cmd/doc_search/doc_search`, and `cmd/small_domain_bench/small_domain_bench`. Passing in the `-h` flag prints the help message.
 
 The following table describes the configurations of the framework tested by the scripts.
 
-| Script               | PSI Layer              | Matching Layer         | Aggregation Layer      |
+| Programs             | PSI Layer              | Matching Layer         | Aggregation Layer      |
 |----------------------|------------------------|------------------------|------------------------|
 | `chem_search`        | Small Domain + ePSI-CA | Tversky Match (Tv-PSM) | Naive / X-Agg / CA-Agg |
 | `doc_search`         | Small Input  + PSI     | Full Match (F-PSM)     | Naive / X-Agg / CA-Agg |
@@ -76,26 +76,26 @@ Whereas `chem_search` and `doc_search` evaluate the framework in full (for diffe
 
 *Shared parameters.* The precise setting of the benchmark is controlled through command-line arguments. We recap here the shared parameters:
 
- * `-logn` the BFV polynomial degree in bits (default 15, supported values 12--15). For example, for `-logn 13`, the script uses the `P_{8k}` configuration from the paper.
+ * `-ns` The number of server sets (default 1024). For example: the number of chemical compounds for `chem_search` and the number of documents for `doc_search`.
+ * `-logn` the BFV polynomial degree in bits (default 15, supported values 12--15). For example, for `-logn 13`, the program uses the `P_{8k}` configuration from the paper.
  * `-o file` The filename to which to write the JSON benchmarking results (default "bench.json")
  * `-r int` The number of times to repeat the experiment (default 1)
  * `-bar` If supplied, shows a progress bar
  * `-v` If supplied give verbose output.
 
-The `chem_search` and `doc_search` scripts additionally take the following parameters as input to control the number of server sets and the type of aggregation:
+The `chem_search` and `doc_search` programs additionally take the type of aggregation as an input:
 
- * `-ns` The number of server sets (default 1024). For example: the number of chemical compounds for `chem_search` and the number of documents for `doc_search`.
  * `-agg string` Specifies the aggregation function used to compute the collection-wide response ['' (naive), 'x-ms', 'ca-ms'] (default "x-ms")
 
 *Note.* For benchmarking purposes the randomness seed is fixed between runs. When using the framework directly (see below), you should use `rand.Seed()` to ensure the randomness is different for each run.
 
-*Running full benchmarks.* Please see `../bench/` for the scripts that we used to run these individual benchmarking scripts and produce the data in the paper.
+*Running full benchmarks.* Please see `../bench/` for the scripts that we used to run these individual benchmarking programs and produce the data in the paper.
 
 ### Benchmarking Chemical Similarities
 
-The `chem_search` benchmarking program can be used to measure performance in the chemical similarity setting (see Section 11.1 in the paper). The evaluation in the paper (see Figure 5) contain performance results using existential aggregation (with `-agg x-ms`) and cardinality aggregation (with `-agg ca-ms`). In addition to the common parameters above, this benchmark script supports the following options:
+The `chem_search` benchmarking program can be used to measure performance in the chemical similarity setting (see Section 11.1 in the paper). The evaluation in the paper (see Figure 5) contain performance results using existential aggregation (with `-agg x-ms`) and cardinality aggregation (with `-agg ca-ms`). In addition to the common parameters above, this benchmark program supports the following options:
 
- * `-chemdb-path PATH` specifies a fingerprint source file. The number of fingerprints in the file should be at least as big as the number of server sets. If omitted (or empty), the script will generate random compound fingerprints. This repository comes with a precomputed set of 8000 fingerprints in `data/raw_chem/fps-mini.txt`. If you want a larger (non-random) input, please see `chemistry`/ for how to compute it.
+ * `-chemdb-path PATH` specifies a fingerprint source file. The number of fingerprints in the file should be at least as big as the number of server sets. If omitted (or empty), the program will generate random compound fingerprints. This repository comes with a precomputed set of 8000 fingerprints in `data/raw_chem/fps-mini.txt`. If you want a larger (non-random) input, please see `chemistry`/ for how to compute it.
  * `-sd-domain-size int` specifies the size of the compound finger print (small domain size, default 256).
 
 Here is an example run of 1 measurement (`-r 1`) with the server using 1024 (`-ns 1024`) real molecular fingerprints (`-chemdb-path ../../../data/raw_chem/fps-mini.txt`) and cardinality aggregation (`-agg ca-ms`):
@@ -149,7 +149,7 @@ Answer:  [29]
 ```
 
 ### Benchmarking Document Search
-The `doc_search` benchmarking program can be used to measure performance in the document search setting (see Section 11.2 in the paper). The evaluation in the paper (see Figure 6) contain performance results using existential aggregation (with `-agg x-ms` and `-logn 15`) and cardinality aggregation (with `-agg ca-ms` and `-logn 13`). In addition to the common parameters above, this benchmark script supports the following options:
+The `doc_search` benchmarking program can be used to measure performance in the document search setting (see Section 11.2 in the paper). The evaluation in the paper (see Figure 6) contain performance results using existential aggregation (with `-agg x-ms` and `-logn 15`) and cardinality aggregation (with `-agg ca-ms` and `-logn 13`). In addition to the common parameters above, this benchmark program supports the following options:
 
  * `-hash-per-kw int` The number of hash functions used for each keyword. Determines the false-positive rate. Must be a power of 2. (default 2)
  * `-max-doc int` Maximum number of keywords in a query. Must be a power of 2. (default 128)
@@ -233,11 +233,11 @@ Here is an example run of 1 measurement (`-r 1`) that computes the intersection 
 
 ## Internal Implementation
 
-Our benchmarking scripts use our implementation of the PCM framework. This framework implementation is not general. Our implementation is heavily optimized for the use cases in the paper: document and chemical search. These optimization are not compatible with all possible layer configurations and layer combinations outside our two scenario may not work out of the box. Yet, if your scenario matches one of the scenarios in the paper, the implementation of the framework in `pkg/psm` can be used directly.
+Our benchmarking programs use our implementation of the PCM framework. This framework implementation is not general. Our implementation is heavily optimized for the use cases in the paper: document and chemical search. These optimization are not compatible with all possible layer configurations and layer combinations outside our two scenario may not work out of the box. Yet, if your scenario matches one of the scenarios in the paper, the implementation of the framework in `pkg/psm` can be used directly.
 
 The following example shows how the framework can be used and highlights different options. First, we define BFV parameters (using `GetBFVParam` and setup parameters for the framework (using `NewPSIParams`). Then we initialize the framework for a specific operational point (using `NewQueryType`). Thereafter, client and server interact following the pattern in the paper. The client shares the key with the server (`cl.GetKey()`), and sends the query itself (using `cl.Query`). The server computes a response (using `sv.Respond`) which the client evaluates to obtain the answer (using `cl.EvalResponse`)
 
-```
+```go
 func Example() {
     var serverSets [][]uint64
     var clientSet []uint64
