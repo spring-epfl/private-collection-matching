@@ -62,10 +62,8 @@ Usage:
     	Number of server document. (default 1024)
   -agg string
     	Aggregation function used to compute the collection-wide response. ['' (naive), 'x-ms', 'ca-ms'] (default "x-ms")
-
   -o string
     	Address of json output (default "bench.json")
-
   -r int
     	Number of times repeating the experiment (default 1)
   -bar
@@ -74,7 +72,7 @@ Usage:
 ```
 
 
-Parameters only applying to document search (./doc_search/doc_search):
+Parameters only applying to document search (`./doc_search/doc_search`):
 ```
 usage:
   -hash-per-kw int
@@ -86,7 +84,7 @@ usage:
 ```
 
 
-Parameters only applying to chemical search (./doc_search/chem_search):
+Parameters only applying to chemical search (`./doc_search/chem_search`):
 ```
 Usage:
   -chemdb-path string
@@ -94,6 +92,14 @@ Usage:
   -sd-domain-size int
     	Size of the compound fingerprint(Small domain size) (default 167)
 ```
+
+Besides the document and chemical compound search executables, we provide a CLI to ease reproducing our small-domain PSI-CA measurements in Appendix D.1. You can find this CLI in `small_domain_bench/small_domain_bench` and takes the following parameters:
+````
+Usage:
+  -sd-domain-size int
+    	Small domain size
+```
+
 
 
 ### Running an chemical search engine application

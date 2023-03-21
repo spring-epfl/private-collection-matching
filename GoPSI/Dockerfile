@@ -22,6 +22,7 @@ RUN mkdir -p /GoPSI/data
 RUN cd /GoPSI && go get ./...
 RUN cd /GoPSI/cmd/doc_search && go build
 RUN cd /GoPSI/cmd/chem_search && go build
+RUN cd /GoPSI/cmd/small_domain_bench && go build
 
 # Chembl database location
 VOLUME ["/GoPSI/chemistry"]
