@@ -1,4 +1,9 @@
-# Private Collection Matching Benchmark
+# Private Collection Matching Benchmarks
+
+In the paper we solved two problems using our framework: chemical similarity testing and document search. The go package contained in this directory contains two benchmarking scripts, one for each problem. Internally these scripts rely on a partial implementation of our framework in Go. The implementations use the `Lattigo` library for access to the BFV somewhat homomorphic encryption scheme.
+
+As explained in the paper, due to the limited multiplicative depth of the BFV encryption scheme, we could not implement all possible combinations of matching and aggregation functions supported by our framework.
+
 
 ## Structure of the code
 Our framework is contained in `GoPSI/pkg/psm`. We provide a docker to ease reproducing our result, but we also have a guide on how to manually install and use our code. We provide two CLIs to perform document and chemical compound search. Moreover, we provide an overview of our code's structure and API. We have scrips to automate benchmarking our code in `bench` directory.
@@ -10,14 +15,18 @@ We provide a docker container to run our system without worrying about dependenc
 $ cd GoPSI
 $ docker build -t gopsi .
 $ docker run -it --rm -v "$(pwd)"/../chemistry:/GoPSI/chemistry -v "$(pwd)"/../data:/GoPSI/data gopsi
-(gopsi) $ cd /GoPSI/chem_search
+```
+
+This command mounts the `chemistry` and `data` directories inside the docker container so that they are available there. You can now run commands as usual. The binaries have already been build. For example:
+
+```
+(gopsi) $ cd /GoPSI/cmd/chem_search
 (gopsi) $ ./chem_search
 ```
 
-**Note:** We are mounting the `chemistry` and `data` directories inside the docker.
 
 ## Manual install
-You can also install our system manually outside the docker. 
+You can also install our system manually outside the docker.
 
 ### Install dependencies
 Our framework is written in Go. You can download and install go following the instruction [here](https://go.dev/dl/). After installing GoLang, the go command will take care of the remaining dependencies.
@@ -38,20 +47,31 @@ $ cd GoPSI/cmd/doc_search
 $ go build
 ```
 
-### Testing 
-Before running the test, make sure that the `const FPS_MINI_PATH` from the `config.go` file correctly links to a compound fingerprint file. We make sure this that address is correct in the docker, but you may have to modify it when running outside the docker. 
-You can use the following command to test the benchmark. Running all tests takes 5-10 minutes.
+## Testing
+
+Our implementations come with a collection of tests. You can run these tests (either from the docker container or locally) by running:
+
 ```
-$ cd pkg/psm
+$ cd GoPSI/pkg/psm
 $ go test
 ```
 
-## CLI
+Running all tests takes 5-10 minutes.
+
+As long as you call `go test` directly from the `psm` directory this will work directly. Otherwise, please update the `const FPS_MINI_PATH` path variable in `config.go` to point to the absolute path to of the `data/raw_chem/fps-mini.txt` file.
+
+
+## Benchmarking scripts
+
+We implemented three benchmarking scripts to evaluate the framework in different configurations:  `cmd/chem_search/chem_search`, `cmd/doc_search/doc_search`, and `cmd/small_domain_bench/small_domain_bench`. Passing in the `-h` flag prints the help message.
+
+*Note.* For benchmarking purposes the randomness seed is fixed between runs. When using the framework directly (see below), you should use `rand.Seed()` to ensure the randomness is different for each run.
+
+*Shared parameters.* 
 
 ### Running CLI
 You can run the `GoPSI/cmd/chem_search/chem_search` and `GoPSI/cmd/doc_search/doc_search` executables to access our CLI. Setting the `-h` prints the manual to use the CLI.
 
-*Note.* The randomness seed is fixed between runs. You should use `rand.Seed()` if you want different randomness between multiple runs.
 
 Common arguments between document and chemical search:
 ```
