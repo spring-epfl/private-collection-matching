@@ -13,11 +13,6 @@ make
 # Prepare emp
 
 cd /psi/emp/
-git clone https://github.com/PizzaWhisperer/emp-tool.git
-cd emp-tool
-cmake .
-make
-cd ..
 cmake .
 make
 make install
