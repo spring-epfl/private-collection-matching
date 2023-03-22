@@ -1,4 +1,4 @@
-# Benchmarks for related works
+# Benchmarks for Related Work
 
 ## Overview
 We benchmarked the following two PSI implementations and compared them to our framework:  (1) `emp` is a generic solution built on top of an SMC compiler called [EMP-toolkit](https://github.com/emp-toolkit/emp-tool) that we designed in Section 11.3 of our paper. `2PC` is a Circuit-PSI protocol based on [1] (the code is taken from the repository accompanying the paper).
@@ -10,7 +10,7 @@ We used a Docker infrastructure to have an identical user space for building, an
 The benchmarks consist of a preparation phase in which:
 - we build the Docker images that will be used,
 - we start 2 Docker containers (one for the client, the other for the server),
-- we build the related works inside the containers,
+- we build the related works inside one of the containers (and it will thus be immediately accessible in the other container),
 - we simulate network delays,
 - and optionally, we test that the containers can "speak" to each other with a 100 ms delay.
 
@@ -43,9 +43,11 @@ For ease of use, we provided a Makefile to orchestrate operations, if you do not
 Our benchmarking infrastructure is located in the `benchmarks` directory.
 
 **Important:** We use git submodules for handling related work codes. If you have not cloned the repository in a recursive mode, run the following command to initiate and retrieve third-party repositories:
+
 ```
 $ git submodule update --init --recursive
 ```
+
 You need to build the Docker images and start the containers from the `benchmark` working directory.
 The containers are based on a Debian 11 "bullseye" image and contain all the dependencies to run the benchmarks, as well as a compilation toolchain to build the related works.
 Moreover, the `relatedwork` directory of your host file system will be mounted in the Docker containers to make the related work code accessible from them.
@@ -62,13 +64,12 @@ Once the containers are running, we need to build the related works.
 We are doing these compilations inside one of the Docker containers where the compilation toolchain and dependencies are already installed.
 We automated these tasks with scripts, which can be run inside the containers via a Make command.
 ```
-make prepare
+$ make prepare
 ```
-
 
 Finally, you will need to simulate network delays and test that you indeed have a network delay between the 2 containers.
 ```
-make delays
+$ make delays
 (optional) make test
 ```
 
@@ -80,15 +81,20 @@ The name of the Docker containers used in these benchmarks are `server` and `cli
 We provide you with 2 scripts to benchmark 2PC-Circuit-PSI and emp-sh2pc.
 Once the Docker infrastructure is running and the related work is compiled, you can run these scripts to run the benchmarks.
 
-For 2PC-Circuit-PSI:
+*Warning:* These scripts will take a long time to complain when they run over the full set of parameters. If you are just testing these scripts, or do not want to reproduce the full measurements, please modify the ranges in the respective scripts to the server set sizes that you want to test.
+
+For 2PC-Circuit-PSI you can reproduce our measurements by running:
 ```
 bash bench-2pc.sh
 ```
+The results are written to `../2-PC-Circuit-PSI/benchmarks/` where `circuit-time-client.log` and `circuit-time-server.log` contain the respective runtime for the client and the server. These CSV files encode the number of server sets, the total time elapsed (s), the total user time (s), and the total kernel time (s).
 
-For emp-sh2pc:
+For EMP you can reproduce our measurements by running:
 ```
 bash bench-emp.sh
 ```
+The runtimes (and internal measurements) are written stored in `../emp/` in the files `emp_ca_client.log`, `emp_ca_server.log`, `emp_x_server.log` and `emp_x_client.log`.
+
 
 ## Stopping the Experiment
 At the end of the experiment, you can stop the Docker containers used for the benchmarks with a Make command
