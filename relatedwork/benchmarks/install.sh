@@ -13,7 +13,7 @@ make
 # Prepare emp
 
 cd /psi/emp/
-git clone https://github.com/PizzaWhisperer/emp-tool.git
+git clone https://github.com/spring-epfl/emp-tool.git
 cmake .
 make
 make install

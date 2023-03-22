@@ -27,7 +27,7 @@ time \
 wget
 
 RUN cd /tmp && \
-git clone https://github.com/PizzaWhisperer/emp-tool.git ; cd emp-tool ; cmake . ; make ; make install ; cd /tmp ; rm -r emp-tool && \
+git clone https://github.com/spring-epfl/emp-tool.git ; cd emp-tool ; cmake . ; make ; make install ; cd /tmp ; rm -r emp-tool && \
 for k in ot zk sh2pc ag2pc agmpc; do git clone https://github.com/emp-toolkit/emp-${k}.git ; cd emp-${k}; cmake . ; make ; make install ; cd /tmp ; rm -r emp-${k} ; done && \
 echo "EMP Installed!"
 
