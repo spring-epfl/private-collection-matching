@@ -1,12 +1,6 @@
 # Private Collection Matching Protocols
-This repository accompanies the paper *"Private set matching protocols"* by Kasra
-EdalatNejad (SPRING Lab, EPFL), Mathilde Raynal(SPRING Lab, EPFL), Wouter Lueks (SPRING Lab, EPFL), and Carmela Troncoso (SPRING Lab, EPFL).
-
-
-This repository contains the benchmark code for evaluating our protocol and aims to facilitate the reproducibility of measurements in the paper.
-
-You can find an early version of the paper at [arXiv](https://arxiv.org/abs/2206.07009).
-
+This repository accompanies the paper *"Private Collection Matching Protocols"* by Kasra
+EdalatNejad (SPRING Lab, EPFL), Mathilde Raynal(SPRING Lab, EPFL), Wouter Lueks (CISPA Helmholtz Center for Information Security), and Carmela Troncoso (SPRING Lab, EPFL).
 
 > **Abstract:**
 > We introduce Private Collection Matching (PCM) problems, in which a client aims to determine whether a collection of sets owned by a server matches their interests.
@@ -16,12 +10,14 @@ You can find an early version of the paper at [arXiv](https://arxiv.org/abs/2206
 > We demonstrate the potential of our framework by designing and implementing novel solutions for two real-world PCM problems: determining whether a dataset has chemical compounds of interest, and determining whether a document collection has relevant documents.
 > Our evaluation shows that we offer a privacy gain with respect to existing works at a reasonable communication and computation cost.
 
+## This repository
 
-## Structure of the repository
-This repository is structured as follows:
- - `GoPSI`: this folder contains the framework introduced in the paper.
- - `chemistry`: python code to extract smiles from the ChEMBL compound database and compute their fingerprint.
- - `bench`: includes scripts to run the benchmark and the python code to generate figures from raw measurements.
- - `Data`: includes raw benchmark measurements and raw data used for chemical search.
- - `relatedwork`: includes codes and dockers to reproduce the related work measurement in the paper (Section 11.3) 
+This repository serves four goals:
 
+ 1. It contains the implementation of the (implementable parts) of the framework in Go, as well as three example applications that use the framework to solve the problems in the paper. The implementations and the applications can be found in the `GoPSI` directory. Our implementations can be evaluated by running the `bench/bench.sh` script.
+
+ 2. To reproduce our evaluation of related work that was included in the paper. We compared the implementation based on our framework with two other approaches (1) based on a generic SMC compiler (EMP) and (2) an extensible Circuit PSI protocol. We implemented appropriate circuits using the SMC compiler. The `relatedwork/` directory contains the benchmarking infrastructure that we used to run these works and to evaluate their results.
+
+ 3. To store our measurements (both of our own implementations as well as those of related work). Raw measurement data can be found in `data/raw`. This directory contains both evaluations using our framework, as well as the related works. The `data/agg` directory contains the same data in post-processed form to simplify plotting.
+
+ 4. To enable reproducing the graphs in the paper. The scripts in `bench/` capture the full pipeline from benchmarking, processing raw measurements, and finally preparing the graphs in the paper.
