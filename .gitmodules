@@ -1,0 +1,6 @@
+[submodule "relatedwork/2PC-Circuit-PSI"]
+	path = relatedwork/2PC-Circuit-PSI
+	url = https://github.com/spring-epfl/2PC-Circuit-PSI.git
+[submodule "relatedwork/emp"]
+	path = relatedwork/emp
+	url = https://github.com/spring-epfl/emp-sh2pc.git
