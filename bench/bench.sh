@@ -60,16 +60,16 @@ done
 #################################################################
 # # Running small domain comparison
 # # No matching or aggregation
-# for i in  4 8 16 32 64 128 # 256 512 1024
-# do
-#     echo "$(date)" 1>&2
+for i in  4 8 16 32 64 128 # 256 512 1024
+do
+    echo "$(date)" 1>&2
 
-#     # Domain size = 256
-#     echo "Running small domain (CA-256) with $i server sets:" 1>&2
-#     $exec -logn 13  -ns $i -small-domain=true -psi "ca" -match "" -agg "" -r $repeats -sd-domain 256 -o "$bench_dir/sm_ca_256_ns$i.json"
+    # Domain size = 256
+    echo "Running small domain (CA-256) with $i server sets:" 1>&2
+    $exec_dir/small_domain_bench/small_domain_bench -logn 13 -ns $i -r $repeats -sd-domain-size 256 -o "$bench_dir/sm_ca_256_ns$i.json"
    
-#     # Domain size = 4096 
-#     echo "Running small domain (CA-4096) with $i server sets:" 1>&2
-#     go run . -logn 13  -ns $i -small-domain=true -psi "ca" -match "" -agg "" -r $repeats -sd-domain 4096 -o "$bench_dir/sm_ca_4k_ns$i.json"
-#     sleep 1
-# done
+    # Domain size = 4096 
+    echo "Running small domain (CA-4096) with $i server sets:" 1>&2
+    $exec_dir/small_domain_bench/small_domain_bench -logn 13 -ns $i  -r $repeats -sd-domain-size 4096 -o "$bench_dir/sm_ca_4k_ns$i.json"
+    sleep 1
+done

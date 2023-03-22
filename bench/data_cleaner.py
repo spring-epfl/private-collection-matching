@@ -87,7 +87,7 @@ def get_gopsi_bench(dir_addr) -> list[pd.DataFrame]:
     return [ca, x]
 
 
-def create_individual_dfs(raw_dir_addr: str, out_dir_addr: str):
+def create_individual_dfs(raw_dir_addr: str, out_dir_addr: str, enable_spot = False):
     circuit = parse_circuit(raw_dir_addr+'circuit-time-client.csv', raw_dir_addr+'circuit-time-server.csv', 'Circuit-PSI')
     circuit.to_csv(out_dir_addr+'circuit_psi.csv')
     circuit.to_pickle(out_dir_addr+'circuit_psi.pkl')
@@ -100,17 +100,19 @@ def create_individual_dfs(raw_dir_addr: str, out_dir_addr: str):
     emp_x.to_csv(out_dir_addr+'emp_x.csv')
     emp_x.to_pickle(out_dir_addr+'emp_x.pkl')
 
-    spot = extrapolate_spot(raw_dir_addr, 'SpOT')
-    spot.to_csv(out_dir_addr+'spot.csv')
-    spot.to_pickle(out_dir_addr+'spot.pkl')
+    if enable_spot:
+        spot = extrapolate_spot(raw_dir_addr, 'SpOT')
+        spot.to_csv(out_dir_addr+'spot.csv')
+        spot.to_pickle(out_dir_addr+'spot.pkl')
 
 
-def load_full_df(data_dir_addr: str):
+def load_full_df(data_dir_addr: str, approach_names: list[str]):
+    # approach_names in ['circuit_psi', 'emp_x', 'emp_ca', 'spot']
     base_addr = data_dir_addr+'agg/'
     bench_columns = ['name','SetNum','Latency','client_comp','server_comp','communication',]
 
     dfs = get_gopsi_bench(base_addr)
-    for ap_name in ['circuit_psi', 'emp_x', 'emp_ca', 'spot']:
+    for ap_name in approach_names:
         dfs.append(pd.read_pickle(f'{base_addr}{ap_name}.pkl'))
 
     full_df = pd.concat(dfs)
@@ -120,7 +122,7 @@ def load_full_df(data_dir_addr: str):
 
 
 
-def read_chem_bench(file_addr):
+def read_json_bench(file_addr):
     with open(file_addr, 'r') as fd:
         raw = json.load(fd)
 

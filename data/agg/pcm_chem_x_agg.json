@@ -1,0 +1,524 @@
+[
+
+[
+ {
+  "SetNum": 1000000,
+  "RespSize": 6144,
+  "PreProcess": 2.105236486,
+  "Query": 0.027426002,
+  "Response": 6756.206257762,
+  "Evaluation": 0.016947376,
+  "Marshal": 0.387092166
+ },
+ {
+  "SetNum": 1000000,
+  "RespSize": 6144,
+  "PreProcess": 2.052886004,
+  "Query": 0.026933789,
+  "Response": 6330.093864935,
+  "Evaluation": 0.016832666,
+  "Marshal": 0.337344103
+ },
+ {
+  "SetNum": 1000000,
+  "RespSize": 6144,
+  "PreProcess": 2.06690444,
+  "Query": 0.027056331,
+  "Response": 6323.201697377,
+  "Evaluation": 0.016661015,
+  "Marshal": 0.354273428
+ }
+],
+
+[
+ {
+  "SetNum": 1000,
+  "RespSize": 6144,
+  "PreProcess": 2.103209165,
+  "Query": 0.027565284,
+  "Response": 27.31403335,
+  "Evaluation": 0.017039225,
+  "Marshal": 0.425547717
+ },
+ {
+  "SetNum": 1000,
+  "RespSize": 6144,
+  "PreProcess": 2.182363897,
+  "Query": 0.02849368,
+  "Response": 27.45167933,
+  "Evaluation": 0.017090337,
+  "Marshal": 0.374023994
+ },
+ {
+  "SetNum": 1000,
+  "RespSize": 6144,
+  "PreProcess": 2.188755127,
+  "Query": 0.028502205,
+  "Response": 27.458404454,
+  "Evaluation": 0.017278674,
+  "Marshal": 0.354679834
+ },
+ {
+  "SetNum": 1000,
+  "RespSize": 6144,
+  "PreProcess": 2.195195233,
+  "Query": 0.028485677,
+  "Response": 27.56166759,
+  "Evaluation": 0.017320607,
+  "Marshal": 0.355918506
+ },
+ {
+  "SetNum": 1000,
+  "RespSize": 6144,
+  "PreProcess": 2.182317535,
+  "Query": 0.028380183,
+  "Response": 27.372822936,
+  "Evaluation": 0.017098648,
+  "Marshal": 0.34988882
+ }
+],
+
+[
+ {
+  "SetNum": 128000,
+  "RespSize": 6144,
+  "PreProcess": 2.056744345,
+  "Query": 0.027178398,
+  "Response": 809.793039618,
+  "Evaluation": 0.01686905,
+  "Marshal": 0.342185989
+ },
+ {
+  "SetNum": 128000,
+  "RespSize": 6144,
+  "PreProcess": 2.122170796,
+  "Query": 0.027872013,
+  "Response": 813.886332647,
+  "Evaluation": 0.016719237,
+  "Marshal": 0.320248082
+ },
+ {
+  "SetNum": 128000,
+  "RespSize": 6144,
+  "PreProcess": 2.138771308,
+  "Query": 0.0285544,
+  "Response": 810.120565408,
+  "Evaluation": 0.016771284,
+  "Marshal": 0.322770194
+ },
+ {
+  "SetNum": 128000,
+  "RespSize": 6144,
+  "PreProcess": 2.134343786,
+  "Query": 0.028103535,
+  "Response": 810.952481881,
+  "Evaluation": 0.016706352,
+  "Marshal": 0.319882827
+ },
+ {
+  "SetNum": 128000,
+  "RespSize": 6144,
+  "PreProcess": 2.142746165,
+  "Query": 0.028166222,
+  "Response": 809.2253611,
+  "Evaluation": 0.016762961,
+  "Marshal": 0.32804025
+ }
+],
+
+[
+ {
+  "SetNum": 16000,
+  "RespSize": 6144,
+  "PreProcess": 2.2231515809999998,
+  "Query": 0.027630486,
+  "Response": 125.670997231,
+  "Evaluation": 0.066299209,
+  "Marshal": 1.111270718
+ },
+ {
+  "SetNum": 16000,
+  "RespSize": 6144,
+  "PreProcess": 2.5013451890000002,
+  "Query": 0.028858201,
+  "Response": 131.887149565,
+  "Evaluation": 0.027661715,
+  "Marshal": 0.392431218
+ },
+ {
+  "SetNum": 16000,
+  "RespSize": 6144,
+  "PreProcess": 2.30927524,
+  "Query": 0.029715339,
+  "Response": 131.594268847,
+  "Evaluation": 0.017317846,
+  "Marshal": 0.441950302
+ },
+ {
+  "SetNum": 16000,
+  "RespSize": 6144,
+  "PreProcess": 2.504521393,
+  "Query": 0.037426727,
+  "Response": 120.866593018,
+  "Evaluation": 0.016997142,
+  "Marshal": 0.398983851
+ },
+ {
+  "SetNum": 16000,
+  "RespSize": 6144,
+  "PreProcess": 2.317930551,
+  "Query": 0.029135113,
+  "Response": 126.961809207,
+  "Evaluation": 0.017497814,
+  "Marshal": 0.359083918
+ }
+],
+
+[
+ {
+  "SetNum": 2000000,
+  "RespSize": 6144,
+  "PreProcess": 2.078390283,
+  "Query": 0.02713793,
+  "Response": 12707.16790103,
+  "Evaluation": 0.016700654,
+  "Marshal": 0.342422743
+ },
+ {
+  "SetNum": 2000000,
+  "RespSize": 6144,
+  "PreProcess": 2.075493526,
+  "Query": 0.031618964,
+  "Response": 12725.746786921,
+  "Evaluation": 0.016670763,
+  "Marshal": 0.359730269
+ },
+ {
+  "SetNum": 2000000,
+  "RespSize": 6144,
+  "PreProcess": 2.063682704,
+  "Query": 0.027250666,
+  "Response": 13486.784262536,
+  "Evaluation": 0.017377474,
+  "Marshal": 0.396566368
+ }
+],
+
+[
+ {
+  "SetNum": 2000,
+  "RespSize": 6144,
+  "PreProcess": 2.122128919,
+  "Query": 0.027609934,
+  "Response": 32.772588125,
+  "Evaluation": 0.016808164,
+  "Marshal": 0.427919395
+ },
+ {
+  "SetNum": 2000,
+  "RespSize": 6144,
+  "PreProcess": 2.182221831,
+  "Query": 0.02837579,
+  "Response": 32.884659736,
+  "Evaluation": 0.017152224,
+  "Marshal": 0.350968553
+ },
+ {
+  "SetNum": 2000,
+  "RespSize": 6144,
+  "PreProcess": 2.187783815,
+  "Query": 0.028494285,
+  "Response": 33.010464752,
+  "Evaluation": 0.017193213,
+  "Marshal": 0.352247691
+ },
+ {
+  "SetNum": 2000,
+  "RespSize": 6144,
+  "PreProcess": 2.178821764,
+  "Query": 0.028637662,
+  "Response": 32.943956907,
+  "Evaluation": 0.017198167,
+  "Marshal": 0.358606042
+ },
+ {
+  "SetNum": 2000,
+  "RespSize": 6144,
+  "PreProcess": 2.200161627,
+  "Query": 0.028410702,
+  "Response": 32.952685106,
+  "Evaluation": 0.017212516,
+  "Marshal": 0.358062072
+ }
+],
+
+[
+ {
+  "SetNum": 256000,
+  "RespSize": 6144,
+  "PreProcess": 2.098490455,
+  "Query": 0.028763272,
+  "Response": 1748.49508862,
+  "Evaluation": 0.017566203,
+  "Marshal": 0.371729275
+ },
+ {
+  "SetNum": 256000,
+  "RespSize": 6144,
+  "PreProcess": 2.174437436,
+  "Query": 0.029058452,
+  "Response": 1755.500010097,
+  "Evaluation": 0.017263069,
+  "Marshal": 0.423572858
+ },
+ {
+  "SetNum": 256000,
+  "RespSize": 6144,
+  "PreProcess": 2.260148164,
+  "Query": 0.02956318,
+  "Response": 1744.906795463,
+  "Evaluation": 0.017197567,
+  "Marshal": 0.371618361
+ },
+ {
+  "SetNum": 256000,
+  "RespSize": 6144,
+  "PreProcess": 2.174542844,
+  "Query": 0.029122588,
+  "Response": 1682.779666718,
+  "Evaluation": 0.0166913,
+  "Marshal": 0.32887269
+ },
+ {
+  "SetNum": 256000,
+  "RespSize": 6144,
+  "PreProcess": 2.158658265,
+  "Query": 0.028551561,
+  "Response": 1824.643808149,
+  "Evaluation": 0.017388922,
+  "Marshal": 0.897270803
+ }
+],
+
+[
+ {
+  "SetNum": 32000,
+  "RespSize": 6144,
+  "PreProcess": 2.097508117,
+  "Query": 0.027242944,
+  "Response": 210.272398364,
+  "Evaluation": 0.017504898,
+  "Marshal": 0.356430035
+ },
+ {
+  "SetNum": 32000,
+  "RespSize": 6144,
+  "PreProcess": 2.187142469,
+  "Query": 0.028485123,
+  "Response": 211.131360182,
+  "Evaluation": 0.017164055,
+  "Marshal": 0.353761475
+ },
+ {
+  "SetNum": 32000,
+  "RespSize": 6144,
+  "PreProcess": 2.182476452,
+  "Query": 0.029256212,
+  "Response": 210.710164424,
+  "Evaluation": 0.017041202,
+  "Marshal": 0.353786573
+ },
+ {
+  "SetNum": 32000,
+  "RespSize": 6144,
+  "PreProcess": 2.184308447,
+  "Query": 0.029211855,
+  "Response": 217.987148491,
+  "Evaluation": 0.017385607,
+  "Marshal": 0.354753108
+ },
+ {
+  "SetNum": 32000,
+  "RespSize": 6144,
+  "PreProcess": 2.280921949,
+  "Query": 0.028954769,
+  "Response": 240.832023153,
+  "Evaluation": 0.019201366,
+  "Marshal": 0.429014421
+ }
+],
+
+[
+ {
+  "SetNum": 4000,
+  "RespSize": 6144,
+  "PreProcess": 2.08625034,
+  "Query": 0.027373426,
+  "Response": 43.899676399,
+  "Evaluation": 0.017083218,
+  "Marshal": 0.421627616
+ },
+ {
+  "SetNum": 4000,
+  "RespSize": 6144,
+  "PreProcess": 2.189575281,
+  "Query": 0.029021881,
+  "Response": 46.221225474,
+  "Evaluation": 0.01746368,
+  "Marshal": 0.386368004
+ },
+ {
+  "SetNum": 4000,
+  "RespSize": 6144,
+  "PreProcess": 2.447751963,
+  "Query": 0.045384828,
+  "Response": 45.488686557,
+  "Evaluation": 0.017056059,
+  "Marshal": 0.348129206
+ },
+ {
+  "SetNum": 4000,
+  "RespSize": 6144,
+  "PreProcess": 2.194678869,
+  "Query": 0.029204941,
+  "Response": 44.066165746,
+  "Evaluation": 0.017188907,
+  "Marshal": 0.350138684
+ },
+ {
+  "SetNum": 4000,
+  "RespSize": 6144,
+  "PreProcess": 2.194051729,
+  "Query": 0.029110925,
+  "Response": 44.293420527,
+  "Evaluation": 0.017158349,
+  "Marshal": 0.348341664
+ }
+],
+
+[
+ {
+  "SetNum": 512000,
+  "RespSize": 6144,
+  "PreProcess": 2.15982894,
+  "Query": 0.028500595,
+  "Response": 3519.490213861,
+  "Evaluation": 0.017436604,
+  "Marshal": 0.470005559
+ },
+ {
+  "SetNum": 512000,
+  "RespSize": 6144,
+  "PreProcess": 2.089420892,
+  "Query": 0.029124761,
+  "Response": 3470.509078996,
+  "Evaluation": 0.017421702,
+  "Marshal": 0.377228146
+ },
+ {
+  "SetNum": 512000,
+  "RespSize": 6144,
+  "PreProcess": 2.128441048,
+  "Query": 0.027879077,
+  "Response": 3497.101869248,
+  "Evaluation": 0.01699205,
+  "Marshal": 0.360432339
+ }
+],
+
+[
+ {
+  "SetNum": 64000,
+  "RespSize": 6144,
+  "PreProcess": 2.065679427,
+  "Query": 0.027022854,
+  "Response": 405.664874287,
+  "Evaluation": 0.016889595,
+  "Marshal": 0.315353007
+ },
+ {
+  "SetNum": 64000,
+  "RespSize": 6144,
+  "PreProcess": 2.133254246,
+  "Query": 0.02797234,
+  "Response": 404.662559499,
+  "Evaluation": 0.016619315,
+  "Marshal": 0.318546313
+ },
+ {
+  "SetNum": 64000,
+  "RespSize": 6144,
+  "PreProcess": 2.148456549,
+  "Query": 0.02865341,
+  "Response": 405.584903241,
+  "Evaluation": 0.017030565,
+  "Marshal": 0.320280364
+ },
+ {
+  "SetNum": 64000,
+  "RespSize": 6144,
+  "PreProcess": 2.131128191,
+  "Query": 0.028454549,
+  "Response": 405.056898742,
+  "Evaluation": 0.017040838,
+  "Marshal": 0.315619976
+ },
+ {
+  "SetNum": 64000,
+  "RespSize": 6144,
+  "PreProcess": 2.145948949,
+  "Query": 0.028499188,
+  "Response": 404.677228464,
+  "Evaluation": 0.016983412,
+  "Marshal": 0.316057371
+ }
+],
+
+[
+ {
+  "SetNum": 8000,
+  "RespSize": 6144,
+  "PreProcess": 2.092209247,
+  "Query": 0.027171123,
+  "Response": 66.030738668,
+  "Evaluation": 0.016985648,
+  "Marshal": 0.444135562
+ },
+ {
+  "SetNum": 8000,
+  "RespSize": 6144,
+  "PreProcess": 2.195509504,
+  "Query": 0.029127987,
+  "Response": 69.886891194,
+  "Evaluation": 0.017101901,
+  "Marshal": 0.389489995
+ },
+ {
+  "SetNum": 8000,
+  "RespSize": 6144,
+  "PreProcess": 2.351083515,
+  "Query": 0.048220368,
+  "Response": 78.621087313,
+  "Evaluation": 0.022837743,
+  "Marshal": 0.438236732
+ },
+ {
+  "SetNum": 8000,
+  "RespSize": 6144,
+  "PreProcess": 2.483996167,
+  "Query": 0.032322413,
+  "Response": 75.194870618,
+  "Evaluation": 0.017467315,
+  "Marshal": 0.449964396
+ },
+ {
+  "SetNum": 8000,
+  "RespSize": 6144,
+  "PreProcess": 2.405263261,
+  "Query": 0.031163866,
+  "Response": 73.723169555,
+  "Evaluation": 0.017254272,
+  "Marshal": 0.370457371
+ }
+]
+]
