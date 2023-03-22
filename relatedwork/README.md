@@ -1,6 +1,7 @@
 # Benchmarks for related works
+
 ## Overview
-We benchmarked the following two PSI implementations and compared them to our framework:  (1) `emp` is a generic solution built on top of an SMC compiler called [EMP-toolkit](https://github.com/emp-toolkit/emp-tool) that we designed in Section 11.3 of our paper. `2PC` is a Circuit-PSI protocol based on [1] (the code is taken from the repository accompanying the paper).  
+We benchmarked the following two PSI implementations and compared them to our framework:  (1) `emp` is a generic solution built on top of an SMC compiler called [EMP-toolkit](https://github.com/emp-toolkit/emp-tool) that we designed in Section 11.3 of our paper. `2PC` is a Circuit-PSI protocol based on [1] (the code is taken from the repository accompanying the paper).
 
 We used a Docker infrastructure to have an identical user space for building, and running the implementations to benchmark them.
 
@@ -8,8 +9,8 @@ We used a Docker infrastructure to have an identical user space for building, an
 
 The benchmarks consist of a preparation phase in which:
 - we build the Docker images that will be used,
-- we start 2 Docker containers,
-- we build the related works inside one of the containers,
+- we start 2 Docker containers (one for the client, the other for the server),
+- we build the related works inside the containers,
 - we simulate network delays,
 - and optionally, we test that the containers can "speak" to each other with a 100 ms delay.
 
@@ -17,7 +18,17 @@ And finally, we run a benchmark script for each related work, which will run the
 
 For ease of use, we also provided a Makefile which can be used to orchestrate operations.
 
-### SpOT-PSI
+### Implementations of related work
+
+*EMP-toolkit.*
+We used the EMP compiler to create an SMC protocol for two circuits implementing document search. Both circuits take as input the client set as well as all server sets, and determine, for each server set, whether the client set is contained within it. In terms of our framework, this corresponds to a PSI base-layer and F-Match matching layer. The SMC-CA-Agg version then applies cardinality aggregation (e.g., counting the number of full matches), whereas the SMC-X-Agg version applies existential aggergation (e.g., determining if one of the server sets is a full match).
+
+We implemented both versions in the EMP Toolkit in the [EMP Companion repository](https://github.com/spring-epfl/emp-sh2pc/tree/master/test). In particular, the [`ms-ca.cpp`](https://github.com/spring-epfl/emp-sh2pc/blob/master/test/ms_ca.cpp) file defines the SMC-CA-Agg version, whereas the [`ms-x.cpp`](https://github.com/spring-epfl/emp-sh2pc/blob/master/test/ms_x.cpp) file defines the SMC-X-Agg version. In addition we added benchmarking scripts that are used in this repository to measure performance.
+
+*2PC Circuit PSI.*
+To run proper benchmarks of the Circuit-PSI implementation [1] we had to make changes to the original source code to enable access to more precise benchmark measurements and control over the input. The library with modified code can be found [in the companion 2PC-Circuit-PSI repositiory](https://github.com/spring-epfl/2PC-Circuit-PSI/).
+
+*SpOT-PSI.*
 While we were able to run and evaluate SpOT [2] code on one desktop, we were unable to reliably reproduce the result in our containers. We had issues with the compatibility of the code, boost library, and compiler configuration which prevented us from building the executable in the docker.
 If you are interested in evaluating this work, please follow the instruction in the original [code repository](https://github.com/osu-crypto/SpOT-PSI).
 
