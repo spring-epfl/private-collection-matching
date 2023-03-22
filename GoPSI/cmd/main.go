@@ -66,7 +66,7 @@ func RunCLIBench(cli_type string) {
 
 	bfvParams := GetBFVParam(*lognPtr)
 	pp := NewPSIParams(bfvParams, 128)
-	if cli_type == "chemical" {
+	if cli_type == "chemical" || cli_type == "sd-comparison" {
 		if sdSize > 256 {
 			if (sdSize & (sdSize - 1)) != 0 {
 				panic("The small domain size (sd-domain-size) must be a power of 2.")
@@ -111,7 +111,7 @@ func RunCLIBench(cli_type string) {
 				sets = ReadCompoundsFromFile(chembl, *nsPtr+1)
 			} else {
 				// random compounds
-				sets, err = RandomDataSet(*nsPtr+1, 3, 64, sdSize)
+				sets, err = RandomDataSet(*nsPtr+1, 3, 64, 166)
 				if err != nil {
 					panic(err)
 				}
@@ -125,7 +125,7 @@ func RunCLIBench(cli_type string) {
 			sets[0] = sets[0][:8] // sets[0] represent the query and must be smaller
 		} else if cli_type == "sd-comparison" {
 			// random sets
-			sets, err = RandomDataSet(*nsPtr+1, 3, sdSize/2, sdSize)
+			sets, err = RandomDataSet(*nsPtr+1, 3, sdSize/2, sdSize-1)
 			if err != nil {
 				panic(err)
 			}
