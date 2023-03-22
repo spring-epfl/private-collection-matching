@@ -155,7 +155,7 @@ The `doc_search` benchmarking program can be used to measure performance in the 
  * `-max-doc int` Maximum number of keywords in a query. Must be a power of 2. (default 128)
  * `-max-q int` Maximum number of keywords in a query. Must be a power of 2. (default 8)
 
-The program will generate random document and search keywords. These inputs do not influence the runtime.
+The program will generate random document and search keywords. These inputs do not influence the runtime. Moreover, for the `-hash-per-kw` option, we only multiply the maximum query size to simulate the cost and randomly choose all elements. In other words, we do not apply multiple hash functions on the same input to provide the functionality.
 
 Here is an example run of 1 measurement (`-r 1`) with the server using 2048 (`-ns 2048`) documents, with 128 keywords per document (`-max-doc 128`) and 8 query keywords (`-max-q 8`), cardinality aggregation (`-agg ca-ms`) using P_{8k} as BFV parameters (`-logn 13`):
 
