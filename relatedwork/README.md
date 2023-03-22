@@ -14,7 +14,7 @@ The benchmarks consist of a preparation phase in which:
 - we simulate network delays,
 - and optionally, we test that the containers can "speak" to each other with a 100 ms delay.
 
-And finally, we run a benchmark script for each related work, which will run the correct binaries with the correct option in the docker containers.
+And finally, we run a benchmark script for each related work, which will run the correct binaries with the correct option in the Docker containers.
 
 For ease of use, we also provided a Makefile which can be used to orchestrate operations.
 
@@ -29,15 +29,15 @@ We implemented both versions in the EMP Toolkit in the [EMP Companion repository
 To run proper benchmarks of the Circuit-PSI implementation [1] we had to make changes to the original source code to enable access to more precise benchmark measurements and control over the input. The library with modified code can be found [in the companion 2PC-Circuit-PSI repositiory](https://github.com/spring-epfl/2PC-Circuit-PSI/).
 
 *SpOT-PSI.*
-While we were able to run and evaluate SpOT [2] code on one desktop, we were unable to reliably reproduce the result in our containers. We had issues with the compatibility of the code, boost library, and compiler configuration which prevented us from building the executable in the docker.
+While we were able to run and evaluate SpOT [2] code on one desktop, we were unable to reliably reproduce the result in our containers. We had issues with the compatibility of the code, boost library, and compiler configuration which prevented us from building the executable in the Docker container.
 If you are interested in evaluating this work, please follow the instruction in the original [code repository](https://github.com/osu-crypto/SpOT-PSI).
 
 ## Prerequisites
 You will need Docker and the docker-compose script on your machine to run these benchmarks, as well as a few GB of storage to store the Docker images, the code of the related works and the collected data.
 
-For ease of use, we provided a Makefile to orchestrate operations, if you do not want to, or can not install Make on your host, we also provide the command run by make for each of these steps at the end of this README.
+For ease of use, we provided a Makefile to orchestrate operations, if you do not want to, or can not install Make on your host, we also provide the commands run by Make for each of these steps at the end of this README.
 
-**Note:** If you have a very recent version of Docker, the docker-compose script might already be integrated into the docker command as a plugin, in which case you can either modify the Makefile to replace instances of `docker-compose` by `docker compose`, or run the command manually without using Make.
+**Note:** If you have a very recent version of Docker, the docker-compose script might already be integrated into the `docker` command as a plugin, in which case you can either modify the Makefile to replace instances of `docker-compose` by `docker compose`, or run the command manually without using Make.
 
 ## Preparation Phase
 Our benchmarking infrastructure is located in the `benchmarks` directory.
@@ -81,7 +81,7 @@ The name of the Docker containers used in these benchmarks are `server` and `cli
 We provide you with 2 scripts to benchmark 2PC-Circuit-PSI and emp-sh2pc.
 Once the Docker infrastructure is running and the related work is compiled, you can run these scripts to run the benchmarks.
 
-*Warning:* These scripts will take a long time to complain when they run over the full set of parameters. If you are just testing these scripts, or do not want to reproduce the full measurements, please modify the ranges in the respective scripts to the server set sizes that you want to test.
+**Warning:** These scripts will take a long time to complain when they run over the full set of parameters. If you are just testing these scripts, or do not want to reproduce the full measurements, please modify the ranges in the respective scripts to the server set sizes that you want to test.
 
 For 2PC-Circuit-PSI you can reproduce our measurements by running:
 ```
@@ -102,7 +102,7 @@ At the end of the experiment, you can stop the Docker containers used for the be
 make stop
 ```
 
-If some remaining docker containers were not removed correctly (i.e. if you shut down your laptop while the containers were running), you can remove them by running a Make command to remove all stopped containers:
+If some remaining Docker containers were not removed correctly (i.e. if you shut down your laptop while the containers were running), you can remove them by running a Make command to remove all stopped containers:
 ```
 make clean
 ```
