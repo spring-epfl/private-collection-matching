@@ -1,9 +1,8 @@
 #!/bin/bash
 out=$1
 
-echo "start aggregating measures into $out.\n"
+echo "start aggregating measures into $out."
 
-rm $out
 echo $'[\n' > $out
 cat $2 >> $out
 
