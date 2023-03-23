@@ -5,7 +5,7 @@ exec_dir=../GoPSI/cmd/
 data_dir=../data/
 bench_dir=../data/bench
 
-mkdir -p "$(bench_dir)"
+mkdir -p $bench_dir
 
 #################################################################
 # Running document search 
