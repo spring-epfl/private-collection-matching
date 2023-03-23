@@ -45,6 +45,10 @@ $ go build
 $ cd GoPSI/cmd/doc_search
 $ go build
 ```
+```
+$ cd GoPSI/cmd/small_domain_bench
+$ go build
+```
 
 ### Testing
 
