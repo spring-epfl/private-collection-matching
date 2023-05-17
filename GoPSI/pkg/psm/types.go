@@ -28,7 +28,7 @@ const (
 )
 
 var matchingTypeMap = map[string]MatchingType{
-	"":              MATCHING_NONE,
+	"none":          MATCHING_NONE,
 	"tversky":       MATCHING_TVERSKY,
 	"tversky-plain": MATCHING_TVERSKY_PLAIN,
 	"fpsm":          MATCHING_FPSM,
@@ -43,7 +43,7 @@ const (
 )
 
 var aggregationTypeMap = map[string]AggregationType{
-	"":      AGGREGATION_NAIVE,
+	"naive": AGGREGATION_NAIVE,
 	"x-ms":  AGGREGATION_X_MS,
 	"ca-ms": AGGREGATION_CA_MS,
 }

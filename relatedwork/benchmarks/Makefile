@@ -1,10 +1,15 @@
-.PHONY: clean build start stop prepare delays test
+.PHONY: clean clean-images build start stop prepare delays test
 
 
 clean:
-	docker rm $(shell docker ps --filter status=exited -q)
+	docker container rm $(shell docker ps --filter status=exited -q)
+
+clean-images:
+	docker image rm benchmarks_server benchmarks_client
+	docker image prune -f
 
 build:
+	git submodule update --init --recursive
 	docker-compose build
 
 start:

@@ -2,6 +2,8 @@
 
 In the paper we solved two problems using our framework: chemical similarity testing and document search. The go package contained in this directory contains two benchmarking scripts, one for each problem. Internally these scripts rely on a partial implementation of our framework in Go. The implementations use the `Lattigo` library for access to the BFV somewhat homomorphic encryption scheme.
 
+Our code was tested on a Debian 11 "bullseye" Linux distribution, with Go installed from its base repositories (version 1.15) but it should also compile with a higher Go versions.
+
 As explained in the paper, due to the limited multiplicative depth of the BFV encryption scheme, we could not implement all possible combinations of matching and aggregation functions supported by our framework.
 
 ## Installation and testing
@@ -61,7 +63,7 @@ $ go test
 
 Running all tests takes 5-10 minutes.
 
-As long as you call `go test` directly from the `psm` directory this will work directly (either from the docker container or locally). Otherwise, please update the `const FPS_MINI_PATH` path variable in `config.go` to point to the absolute path to of the `data/raw_chem/fps-mini.txt` file.
+As long as you call `go test` directly from the `psm` directory this will work directly (either from the docker container or locally). Otherwise, please update the `const FPS_MINI_PATH` path variable in `framework_test.go` to point to the absolute path to of the `data/raw_chem/fps-mini.txt` file.
 
 
 ## Benchmarking programs
@@ -82,7 +84,7 @@ Whereas `chem_search` and `doc_search` evaluate the framework in full (for diffe
 
  * `-ns` The number of server sets (default 1024). For example: the number of chemical compounds for `chem_search` and the number of documents for `doc_search`.
  * `-logn` the BFV polynomial degree in bits (default 15, supported values 12--15). For example, for `-logn 13`, the program uses the `P_{8k}` configuration from the paper.
- * `-o file` The filename to which to write the JSON benchmarking results (default "bench.json")
+ * `-o file` The output file to write the JSON benchmarking results (default "bench.json")
  * `-r int` The number of times to repeat the experiment (default 1)
  * `-bar` If supplied, shows a progress bar
  * `-v` If supplied give verbose output.
@@ -102,11 +104,11 @@ The `chem_search` benchmarking program can be used to measure performance in the
  * `-chemdb-path PATH` specifies a fingerprint source file. The number of fingerprints in the file should be at least as big as the number of server sets. If omitted (or empty), the program will generate random compound fingerprints. This repository comes with a precomputed set of 8000 fingerprints in `data/raw_chem/fps-mini.txt`. If you want a larger (non-random) input, please see `chemistry`/ for how to compute it.
  * `-sd-domain-size int` specifies the size of the compound finger print (small domain size, default 256).
 
-Here is an example run of 1 measurement (`-r 1`) with the server using 1024 (`-ns 1024`) real molecular fingerprints (`-chemdb-path ../../../data/raw_chem/fps-mini.txt`) and cardinality aggregation (`-agg ca-ms`):
+Here is an example run of 1 measurement (`-r 1`) with the server using 1024 (`-ns 1024`) real molecular fingerprints (`-chemdb-path ../../data/raw_chem/fps-mini.txt`) and cardinality aggregation (`-agg ca-ms`):
 
 ```
-# cd cmd/chem_search
-# ./chem_search -r 1 -chemdb-path ../../../data/raw_chem/fps-mini.txt -ns 1024 -v -agg ca-ms
+$ cd cmd/chem_search
+$ ./chem_search -r 1 -chemdb-path ../../data/raw_chem/fps-mini.txt -ns 1024 -v -agg ca-ms
 
 2023-03-21T18:16:59+01:00 INF Setting logger level to 'Trace'.
 2023-03-21T18:16:59+01:00 INF Param:
@@ -164,8 +166,8 @@ The program will generate random document and search keywords. These inputs do n
 Here is an example run of 1 measurement (`-r 1`) with the server using 2048 (`-ns 2048`) documents, with 128 keywords per document (`-max-doc 128`) and 8 query keywords (`-max-q 8`), cardinality aggregation (`-agg ca-ms`) using P_{8k} as BFV parameters (`-logn 13`):
 
 ```
-# cd cmd/doc_search
-# ./doc_search -r 1 -ns 1024 -max-doc 128 -max-q 8 -agg ca-ms -logn 13
+$ cd cmd/doc_search
+$ ./doc_search -r 1 -ns 1024 -max-doc 128 -max-q 8 -agg ca-ms -logn 13
 
 Running benchmark with 1024 sets at 2023-03-21 18:31:45.180055 +0100 CET m=+0.046021977.
 
@@ -206,8 +208,8 @@ The program will create random inputs, but inputs do not influence the run-time.
 Here is an example run of 1 measurement (`-r 1`) that computes the intersection cardinality of intersecting the client set with 2048 server sets (`-ns 2048`) assuming a small domain of size 256 items (`-sd-domain-size 256`) and using `P_{8k}` (`-logn 13`):
 
 ```
-# cd cmd/small_domain_bench
-# ./small_domain_bench -r 1 -ns 2048 -sd-domain-size 256 -logn 13 -v
+$ cd cmd/small_domain_bench
+$ ./small_domain_bench -r 1 -ns 2048 -sd-domain-size 256 -logn 13 -v
 
 ***************************************************
 * Computation
