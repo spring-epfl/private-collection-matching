@@ -6,6 +6,8 @@ import (
 )
 
 const PARAM_SIZE = 15
+const FPS_MINI_PATH = "../../../data/raw_chem/fps-mini.txt"
+
 
 func runHomoPsi(paramSize int, clientSet []uint64, serverSets [][]uint64, qt QueryType, repNum int) (*PSIParams, []uint64) {
 	bfvParams := GetBFVParam(paramSize)
@@ -118,6 +120,45 @@ func checkAggregatedTversky(paramSize int, clientSet []uint64, serverSets [][]ui
 	}
 
 	return (ans[0] == matches_truth)
+}
+
+func Example() {
+    var serverSets [][]uint64
+    var clientSet []uint64
+
+    bfvParams := GetBFVParam(15)       // BFV params with N=2^15
+    pp := NewPSIParams(bfvParams, 128) // A framework params with 128 bit security
+
+    // Query options:
+    // 1st positional parameters (small domain): false (use small input), true (use small domain)
+    // psi layer: PSI_PS, PSI_CA
+    // Matching layer: MATCHING_NONE, MATCHING_TVERSKY, MATCHING_TVERSKY_PLAIN, MATCHING_FPSM
+    // Aggregation layer: AGGREGATION_NAIVE, AGGREGATION_X_MS, AGGREGATION_CA_MS
+    // Check 'types.go' for more information.
+    queryType, err := NewQueryType(true, PSI_CA, MATCHING_TVERSKY, AGGREGATION_NAIVE)
+    if err != nil {
+        panic(err)
+    }
+
+    // Setup phase
+    cl := NewClient(pp)
+    sv, err := NewServer(pp, serverSets)
+    if err != nil {
+        panic(err)
+    }
+    clKey := cl.GetKey()
+
+    // Query
+    query, err := cl.Query(clientSet, *queryType)
+    if err != nil {
+        panic(err)
+    }
+    resp, err := sv.Respond(query, clKey)
+    if err != nil {
+        panic(err)
+    }
+    ans := cl.EvalResponse(clientSet, query, resp)
+    _ = ans
 }
 
 func TestTverskySmall(t *testing.T) {

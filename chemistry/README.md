@@ -17,16 +17,28 @@ To directly download the dataset, run:
 wget https://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/releases/chembl_28/chembl_28_sqlite.tar.gz
 ```
 
-You can extract this file to get the `chembl_28.db` file. This dataset v28 with more than 2 million compounds for evaluating our system.
+*Optional:* You can verify the integrity of the archive before extracting it.
+```
+$ echo 'f3e17f0101abd1dab6ec0f0d4e6035f696d797a64bba61d6efe681867a2a1e92    chembl_28_sqlite.tar.gz' > chembl_28_sqlite_sha256.txt
+$ sha256sum -c chembl_28_sqlite_sha256.txt
+```
 
-You can run the following command to extract fingerprints from this db:
+You can extract this file to get the `chembl_28.db` file (extracting this archive might take a few minutes, depending on your system). This dataset v28 with more than 2 million compounds for evaluating our system.
+
+You can prepare a Python virtual environment to install the dependencies for our script:
 
 ```
 $ python -m venv venv
 $ source venv/bin/activate
 $ pip install -r requirements.txt
+```
+
+And extract fingerprints from this database with out script, which can take some time (about 25 minutes on a modern system):
+```
 $ python chem.py -D chembl_28/chembl_28_sqlite/chembl_28.db -o fps.txt
 ```
+
+**Note:** When using RDKit to convert ChEMBL components from the SMILE format to MACCS key, some compounds may not be fully compatible and produce warnings such as "not removing hydrogen atom without neighbors".
 
 The outputs are stored in the file `fps.txt`.
 
@@ -34,7 +46,6 @@ The outputs are stored in the file `fps.txt`.
 ## Files
 
  - `chem.py` allows reading smiles from the dataset and uses [rdkit](https://www.rdkit.org/) to convert them into MACCS keys.
- - `fp_stats.py` compute general statistic over fingerprints
 
 ## References
 

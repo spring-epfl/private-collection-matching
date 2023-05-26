@@ -20,7 +20,8 @@ def parse_circuit(client_log_addr: str, serv_log_addr: str, name: str) -> pd.Dat
     df = pd.merge(clt, serv, left_index=True, right_index=True, suffixes=('_client', '_server'))
     
     df['name'] = name
-    df['SetNum'] =  df['SetNum_client'] 
+    if 'SetNum' not in df:
+        df['SetNum'] =  df['SetNum_client']
     df['communication'] =  (1157397+655492)*df['SetNum'] 
     parse_bashtime_fields(df)
 
@@ -32,7 +33,8 @@ def parse_emp(client_csv_addr: str, serv_csv_addr: str, name: str) -> pd.DataFra
     df = pd.merge(clt, serv, left_index=True, right_index=True, suffixes=('_client', '_server'))
     
     df['name'] = name
-    df['SetNum'] =  df['SetNum_client'] 
+    if 'SetNum' not in df:
+        df['SetNum'] =  df['SetNum_client']
     df['communication'] =  df['com_client'] + df['com_server']
     parse_bashtime_fields(df)
 
@@ -66,7 +68,8 @@ def extrapolate_spot(dir_addr:str, name:str) -> pd.DataFrame:
     serv = pd.read_csv(dir_addr+'spot_server.log')
     raw = pd.merge(clt, serv, left_index=True, right_index=True, suffixes=('_client', '_server'))
     
-    raw['SetNum'] =  raw['SetNum_client'] 
+    if 'SetNum' not in raw:
+        raw['SetNum'] =  raw['SetNum_client']
     raw['communication'] =  (30534)*raw['SetNum'] 
     parse_bashtime_fields(raw)
 

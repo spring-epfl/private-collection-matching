@@ -4,9 +4,9 @@ from typing import List, Iterable
 import sys
 
 
-RE_CA = re.compile("^N: (\d+)\n.+\n.+\n.+\ncounter(\d+)\n(\d+.\d+), (\d+.\d+), (\d+.\d+)\n.+\n.+\n.+\ncounter(\d+)\n(\d+.\d+), (\d+.\d+), (\d+.\d+)", re.MULTILINE)
+RE_CA = re.compile("^N: (\d+)\n.+\n.+\n.+\nTransfer\scost\s\(bytes\):\s(\d+)\n(\d+.\d+), (\d+.\d+), (\d+.\d+)\n.+\n.+\n.+\nTransfer\scost\s\(bytes\):\s(\d+)\n(\d+.\d+), (\d+.\d+), (\d+.\d+)", re.MULTILINE)
 
-RE_X = re.compile("^N: (\d+)\n.+\n.+\ncounter(\d+)\n(\d+.\d+), (\d+.\d+), (\d+.\d+)\n.+\n.+\ncounter(\d+)\n(\d+.\d+), (\d+.\d+), (\d+.\d+)", re.MULTILINE)
+RE_X = re.compile("^N: (\d+)\n.+\n.+\nTransfer\scost\s\(bytes\):\s(\d+)\n(\d+.\d+), (\d+.\d+), (\d+.\d+)\n.+\n.+\nTransfer\scost\s\(bytes\):\s(\d+)\n(\d+.\d+), (\d+.\d+), (\d+.\d+)", re.MULTILINE)
 
 
 def format_csv(raw_iter: Iterable[tuple]) -> List[str]:
@@ -26,6 +26,7 @@ def parse_file(raw_emp: Path, is_ca: bool) -> List[str]:
 
 def main() -> None:
     lines = parse_file(Path(sys.argv[1]), "ca" in sys.argv[1])
+    print("SetNum,com,real,user,sys")
     for line in lines:
         print(line)
 

@@ -8,9 +8,13 @@ apt-transport-https \
 ca-certificates \
 curl \
 ipython3 \
+less \
+nano \
 python3-dev \
 python3-pip \
-python3-virtualenv && \
+python3-venv \
+vim \
+&& \
 apt-get install -t bullseye-backports -y golang-go && \
 apt-get clean -y
 
@@ -27,3 +31,6 @@ RUN cd /GoPSI/cmd/small_domain_bench && go build
 # Chembl database location
 VOLUME ["/GoPSI/chemistry"]
 VOLUME ["/GoPSI/data"]
+
+USER 1000:1000
+WORKDIR /GoPSI

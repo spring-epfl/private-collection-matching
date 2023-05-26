@@ -1,3 +1,4 @@
 numpy==1.24.2
 Pillow==9.4.0
 rdkit==2022.9.5
+seaborn==0.12.2

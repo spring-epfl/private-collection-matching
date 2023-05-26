@@ -25,7 +25,7 @@ func RunCLIBench(cli_type string) {
 	nsPtr := flag.Int("ns", 1024, "Number of server "+set_name+".")
 	lognPtr := flag.Int("logn", 15, "BFV polynomial degree")
 
-	aggregationPtr := flag.String("agg", "x-ms", "Aggregation function used to compute the collection-wide response. ['' (naive), 'x-ms', 'ca-ms']")
+	aggregationPtr := flag.String("agg", "x-ms", "Aggregation function used to compute the collection-wide response. ['naive', 'x-ms', 'ca-ms']")
 
 	// Manage
 	repPtr := flag.Int("r", 1, "Number of times repeating the experiment")
@@ -40,7 +40,6 @@ func RunCLIBench(cli_type string) {
 	if cli_type == "chemical" {
 		flag.IntVar(&sdSize, "sd-domain-size", 256, "Size of the compound fingerprint. Must be a power of 2.") // The size of MACCS keys is 167
 		flag.StringVar(&chembl, "chemdb-path", "", "Address of a chemical fingerprint dataset. (if empty '', uses randomly generated compounds)")
-
 	}
 	// document
 	if cli_type == "document" {
