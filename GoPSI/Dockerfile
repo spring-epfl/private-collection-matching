@@ -1,4 +1,4 @@
-FROM debian:stable
+FROM debian:bullseye
 RUN echo 'deb http://deb.debian.org/debian bullseye-backports main' >> /etc/apt/sources.list && \
 export DEBIAN_FRONTEND='noninteractive' && \
 apt-get update && \
@@ -32,5 +32,4 @@ RUN cd /GoPSI/cmd/small_domain_bench && go build
 VOLUME ["/GoPSI/chemistry"]
 VOLUME ["/GoPSI/data"]
 
-USER 1000:1000
 WORKDIR /GoPSI
