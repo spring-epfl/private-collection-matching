@@ -6,7 +6,7 @@ import (
 )
 
 const PARAM_SIZE = 15
-const FPS_MINI_PATH = "../../../data/raw_chem/fps-mini.txt"
+const FPS_MINI_PATH = "../../data/raw_chem/fps-mini.txt"
 
 
 func runHomoPsi(paramSize int, clientSet []uint64, serverSets [][]uint64, qt QueryType, repNum int) (*PSIParams, []uint64) {
